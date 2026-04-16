@@ -1,0 +1,128 @@
+.talleres {
+  background-color: var(--gris);
+  padding: 90px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.talleres__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-family: "Fraunces", Helvetica, serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 120%;
+    color: #2b1e22;
+  }
+}
+
+.talleres__desc {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #5f5f5f;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 640px;
+}
+
+.label {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #e0636f;
+  font-size: 16px;
+  letter-spacing: 2.4px;
+  line-height: 1;
+}
+
+.talleres__grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.taller-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--coral);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(43, 30, 34, 0.08);
+  }
+}
+
+.taller-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taller-card__num {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  color: var(--rosa-viejo);
+  font-size: 14px;
+}
+
+.taller-card__title {
+  font-family: "Fraunces", Helvetica, serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.taller-card__desc {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.taller-card__action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 500;
+  color: var(--rojo-vino);
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .talleres {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .talleres {
+    padding: 60px 24px;
+  }
+
+  .talleres__header h2 {
+    font-size: 32px;
+  }
+
+  .talleres__grid {
+    flex-direction: column;
+  }
+}

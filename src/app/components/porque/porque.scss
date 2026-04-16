@@ -1,0 +1,111 @@
+.porque {
+  background-color: var(--gris);
+  padding: 90px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.label {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #e0636f;
+  font-size: 16px;
+  letter-spacing: 2.4px;
+  text-align: center;
+}
+
+.porque__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.porque__title {
+  font-family: "Fraunces", Helvetica, serif;
+  font-weight: 600;
+  color: #2b1e22;
+  font-size: 48px;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 714px;
+}
+
+.porque__desc {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #5f5f5f;
+  font-size: 16px;
+  line-height: 1.25;
+  max-width: 1008px;
+}
+
+.porque__grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.porque__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.porque__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(43, 30, 34, 0.06);
+  }
+
+  p {
+    font-family: "Fraunces", Helvetica, serif;
+    font-weight: 600;
+    color: var(--negro-clido);
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+.porque__icon {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .porque {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .porque {
+    padding: 60px 24px;
+  }
+
+  .porque__title-img {
+    width: 100%;
+  }
+
+  .porque__grid {
+    flex-direction: column;
+  }
+
+  .porque__item p {
+    font-size: 20px;
+  }
+}

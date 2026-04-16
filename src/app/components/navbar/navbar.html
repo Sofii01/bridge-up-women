@@ -1,0 +1,17 @@
+<header class="navbar" [class.scrolled]="isScrolled">
+  <img class="logo" src="assets/img/logo.png" alt="BridgeUp Women" />
+
+  <nav class="nav-links" [class.open]="menuOpen">
+    <button class="nav-link" (click)="scrollTo('talleres')">Talleres</button>
+    <button class="nav-link" (click)="scrollTo('comunidad')">Comunidad</button>
+    <button class="nav-link" (click)="scrollTo('sobre')">Sobre nosotras</button>
+    <button class="nav-link" (click)="scrollTo('faqs')">FAQs</button>
+    <button class="btn-primary" (click)="scrollTo('contacto')">Postularme</button>
+  </nav>
+
+  <button class="hamburger" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>

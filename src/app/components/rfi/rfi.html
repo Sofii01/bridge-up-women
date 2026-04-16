@@ -1,0 +1,109 @@
+<section class="rfi">
+  <!-- Columna izquierda: info de contacto -->
+  <div class="rfi__info fade-in-left">
+    <div class="rfi__info-header">
+      <span class="label">CONTACTO</span>
+      <h2>Hablemos.</h2>
+    </div>
+    <p class="rfi__desc">
+      ¿Tenés preguntas sobre el programa, alianzas corporativas o querés sumarte como mentora? Escribinos y te respondemos en menos de 48 horas.
+    </p>
+    <div class="rfi__contacts">
+      <div class="rfi__contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="2" stroke="#5f5f5f" stroke-width="1.5"/>
+          <path d="M2 8L12 13L22 8" stroke="#5f5f5f" stroke-width="1.5"/>
+        </svg>
+        <a href="mailto:contacto@bridgeupwomen.com">contacto&#64;bridgeupwomen.com</a>
+      </div>
+      <div class="rfi__contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="#5f5f5f" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="4" stroke="#5f5f5f" stroke-width="1.5"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#5f5f5f"/>
+        </svg>
+        <span>&#64;bridgeupwomen</span>
+      </div>
+      <div class="rfi__contact-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="4" stroke="#5f5f5f" stroke-width="1.5"/>
+          <path d="M7 17V10H10V17H7ZM8.5 9C7.67 9 7 8.33 7 7.5S7.67 6 8.5 6 10 6.67 10 7.5 9.33 9 8.5 9ZM17 17H14V13.5C14 12.4 13.1 12 12.5 12S11 12.4 11 13.5V17H8V10H11V11.3C11.5 10.4 12.6 10 13.5 10 15.4 10 17 11.3 17 13.5V17Z" fill="#5f5f5f"/>
+        </svg>
+        <a href="https://www.linkedin.com/company/bridge-up-women/about/" target="_blank" rel="noopener">BridgeUp Women</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Columna derecha: formulario -->
+  <div class="rfi__form-wrap fade-in-right">
+    @if (status === 'success') {
+      <div class="rfi__success">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" stroke="#e0636f" stroke-width="2"/>
+          <path d="M14 24L21 31L34 17" stroke="#e0636f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>¡Mensaje enviado!</h3>
+        <p>Te respondemos en menos de 48 horas.</p>
+      </div>
+    } @else {
+      <form class="rfi__form" (ngSubmit)="submit()">
+        <div class="rfi__row">
+          <div class="field">
+            <label for="nombre">NOMBRE*</label>
+            <input id="nombre" type="text" placeholder="Escribe tu nombre" [(ngModel)]="form.nombre" name="nombre" required />
+          </div>
+          <div class="field">
+            <label for="apellido">APELLIDO*</label>
+            <input id="apellido" type="text" placeholder="Escribe tu apellido" [(ngModel)]="form.apellido" name="apellido" required />
+          </div>
+        </div>
+
+        <div class="rfi__row">
+          <div class="field field--sm">
+            <label for="pais">PAÍS*</label>
+            <select id="pais" [(ngModel)]="form.pais" name="pais" required>
+              <option value="" disabled selected>País</option>
+              <option>Argentina</option>
+              <option>México</option>
+              <option>Colombia</option>
+              <option>Chile</option>
+              <option>Perú</option>
+              <option>Uruguay</option>
+              <option>Bolivia</option>
+              <option>Paraguay</option>
+              <option>Ecuador</option>
+              <option>Venezuela</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field field--lg">
+            <label for="telefono">TELÉFONO*</label>
+            <input id="telefono" type="tel" placeholder="+54" [(ngModel)]="form.telefono" name="telefono" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">EMAIL*</label>
+          <input id="email" type="email" placeholder="tu&#64;email.com" [(ngModel)]="form.email" name="email" required />
+        </div>
+
+        @if (status === 'error') {
+          <p class="rfi__error">Hubo un error. Por favor intentá de nuevo.</p>
+        }
+
+        <button type="submit" class="rfi__submit" [disabled]="status === 'loading'">
+          @if (status === 'loading') {
+            <span>Enviando...</span>
+          } @else {
+            <span>Enviar mensaje</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 12L22 2L12 22L10 13L2 12Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          }
+        </button>
+
+        <p class="rfi__legal">Sin spam. Podés darte de baja cuando quieras.</p>
+      </form>
+    }
+  </div>
+</section>

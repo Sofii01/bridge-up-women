@@ -1,0 +1,59 @@
+<section class="cta">
+  <div class="cta__ellipse cta__ellipse--sm"></div>
+  <div class="cta__ellipse cta__ellipse--lg"></div>
+  <div class="cta__content fade-in-up">
+    <span class="cta__label">PRÓXIMA COHORTE 2026</span>
+    <h2 class="cta__title">Tu futuro empieza hoy.</h2>
+    <p class="cta__desc">Sumate a la comunidad de Bridgers hoy mismo y transforma tu transición profesional.</p>
+  </div>
+  <button class="cta__btn" (click)="scrollTo('contacto')">Empezar ahora</button>
+</section>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <img src="assets/img/logo.png" alt="BridgeUp Women" class="footer__logo" />
+      <p class="footer__brand-desc">Impulsando el talento femenino joven hacia el mundo profesional. Formación, mentoría y conexión real con más de 120 empresas aliadas.</p>
+    </div>
+
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><button (click)="scrollTo('hero')">Inicio</button></li>
+          <li><button (click)="scrollTo('talleres')">Talleres</button></li>
+          <li><button (click)="scrollTo('comunidad')">Comunidad</button></li>
+          <li><button (click)="scrollTo('sobre')">Sobre nosotras</button></li>
+          <li><button (click)="scrollTo('faqs')">FAQs</button></li>
+          <li><button (click)="scrollTo('contacto')">Contacto</button></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <div class="footer__contacts">
+          <div class="footer__contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 8L12 13L22 8" stroke="white" stroke-width="1.5"/></svg>
+            <a href="mailto:contacto@bridgeupwomen.com">contacto&#64;bridgeupwomen.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+            <span>&#64;bridgeupwomen</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="white" stroke-width="1.5"/><path d="M7 17V10H10V17H7ZM8.5 9C7.67 9 7 8.33 7 7.5S7.67 6 8.5 6 10 6.67 10 7.5 9.33 9 8.5 9ZM17 17H14V13.5C14 12.4 13.1 12 12.5 12S11 12.4 11 13.5V17H8V10H11V11.3C11.5 10.4 12.6 10 13.5 10 15.4 10 17 11.3 17 13.5V17Z" fill="white"/></svg>
+            <a href="https://www.linkedin.com/company/bridge-up-women/about/" target="_blank" rel="noopener">BridgeUp Women</a>
+          </div>
+        </div>
+        <button class="btn-primary footer__cta-btn" (click)="scrollTo('contacto')">Postularme</button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="footer__divider" />
+
+  <div class="footer__bottom">
+    <p>© 2026 BridgeUp Women. Todos los derechos reservados.</p>
+    <a href="#">Políticas de Privacidad</a>
+  </div>
+</footer>
