@@ -65,7 +65,7 @@
                 }
               ],
               "define": {
-                "__SHEETS_URL__": "JSON.stringify(process.env['SHEETS_URL'] || '')"
+                "__SHEETS_URL__": "\"__SHEETS_URL_PLACEHOLDER__\""
               },
               "budgets": [
                 {

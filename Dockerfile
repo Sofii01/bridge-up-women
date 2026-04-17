@@ -8,11 +8,10 @@ RUN npm ci
 
 COPY . .
 
-# SHEETS_URL se inyecta como ARG en tiempo de build (Railway lo pasa desde env vars)
-ARG SHEETS_URL
-ENV SHEETS_URL=$SHEETS_URL
+ARG SHEETS_URL=""
 
-RUN npm run build
+RUN npm run build && \
+    find /app/dist -name "*.js" -exec sed -i "s|__SHEETS_URL_PLACEHOLDER__|${SHEETS_URL}|g" {} \;
 
 # ── Stage 2: Serve ────────────────────────────────────────────────────────────
 FROM nginx:alpine
