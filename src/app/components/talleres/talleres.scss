@@ -113,6 +113,113 @@
   }
 }
 
+// Modal
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 30, 34, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 36px 36px;
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  position: relative;
+  animation: slideUp 0.25s ease;
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.modal__icon {
+  margin-bottom: 4px;
+}
+
+.modal__title {
+  font-family: "Fraunces", Helvetica, serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #2b1e22;
+}
+
+.modal__text {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5f5f5f;
+}
+
+.modal__socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal__social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1.5px solid var(--rosa-viejo);
+  color: var(--rojo-vino);
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: var(--rosa-viejo);
+    color: #fff;
+
+    svg path, svg rect, svg circle {
+      stroke: #fff;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
 @media (max-width: 768px) {
   .talleres {
     padding: 60px 24px;

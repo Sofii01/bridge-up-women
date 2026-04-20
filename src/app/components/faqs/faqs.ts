@@ -27,12 +27,17 @@ export class Faqs {
     },
     {
       question: '¿Solo es para carreras de sistemas o tecnología?',
-      answer: 'Para nada. Nuestro programa está abierto a mujeres de todas las carreras. La employabilidad, el networking y la marca personal son habilidades transversales.',
+      answer: 'Para nada. Nuestro programa está abierto a mujeres de todas las carreras. La empleabilidad, el networking y la marca personal son habilidades transversales.',
       open: false,
     },
     {
       question: '¿Cómo son los talleres?',
-      answer: 'Los talleres son online, en formato flexible: combinamos sesiones sincrónicas en vivo con contenido asincrónico que podés ver a tu ritmo. Cada taller dura entre 4 y 6 semanas.',
+      answer: 'Los talleres son online, en formato flexible: combinamos sesiones sincrónicas en vivo con contenido asincrónico que podés ver a tu ritmo. Cada taller dura entre 2 y 3 sesiones.',
+      open: false,
+    },
+    {
+      question: '¿Cómo son los Cursos?',
+      answer: 'Los cursos son online, en formato flexible: combinamos sesiones sincrónicas en vivo con contenido asincrónico que podés ver a tu ritmo. Cada curso dura entre 3 y 6 meses.',
       open: false,
     },
     {
