@@ -17,7 +17,7 @@ export class Faqs {
   faqs: FaqItem[] = [
     {
       question: '¿Tengo que pagar para sumarme?',
-      answer: 'No pagás nada por adelantado. BridgeUp Women funciona con modelo ISA: empezás a pagar recién cuando conseguís trabajo, en cuotas accesibles durante 12 meses. Si no conseguís empleo, no pagás.',
+      answer: 'No necesitás invertir nada hoy. El programa funciona con pago diferido: empezás a pagar una vez que finalizás tu formación. Lo dividimos en cuotas durante un año para que sea cómodo. Y si todavía estás en el proceso de búsqueda laboral, adaptamos el monto a un valor reducido para apoyarte hasta que consigas el puesto que buscás.',
       open: true,
     },
     {
