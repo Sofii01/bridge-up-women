@@ -34,23 +34,5 @@ export class Sheets {
   }
 }
 
-/*
-─── CÓMO CONECTAR CON GOOGLE SHEETS ──────────────────────────────────────────
 
-1. Abrí Google Sheets → Extensiones → Apps Script
-2. Pegá este código en el editor:
 
-function doGet(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const { nombre, apellido, pais, telefono, email, timestamp } = e.parameter;
-  sheet.appendRow([timestamp, nombre, apellido, pais, telefono, email]);
-  return ContentService.createTextOutput('OK');
-}
-
-3. Hacé clic en "Implementar" → "Nueva implementación"
-4. Tipo: "Aplicación web"
-5. Ejecutar como: "Yo"
-6. Quién tiene acceso: "Cualquier persona"
-7. Copiá la URL que te da y pegala en SHEETS_URL arriba
-──────────────────────────────────────────────────────────────────────────────
-*/
