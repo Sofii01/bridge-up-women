@@ -10,11 +10,11 @@ RUN npm install -g npm@11.6.2 && \
 COPY . .
 
 ARG SHEETS_URL=""
+ENV SHEETS_URL=$SHEETS_URL
 
-RUN npm run build && \
-    find /app/dist -name "*.js" -exec sed -i "s|__SHEETS_URL_PLACEHOLDER__|${SHEETS_URL}|g" {} \;
+RUN npx ng build --configuration=production \
+    --define="__SHEETS_URL__=\"$SHEETS_URL\""
 
-# ── Stage 2: Serve ────────────────────────────────────────────────────────────
 FROM nginx:alpine
 
 COPY --from=builder /app/dist/bridge-up-women/browser /usr/share/nginx/html

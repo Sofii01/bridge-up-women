@@ -1,4 +1,7 @@
+declare const __SHEETS_URL__: string;
+
+
 export const environment = {
   production: false,
-  sheetsUrl: 'https://script.google.com/macros/s/AKfycbxoLbxji5OORWeKKPi_Ef8eliE0ua9zTWXBNFlPnxZm3_CdWJZ7VcDE1j-PdpPPmpt_1w/exec',
+  sheetsUrl: typeof __SHEETS_URL__ !== 'undefined' ? __SHEETS_URL__ : '',
 };
