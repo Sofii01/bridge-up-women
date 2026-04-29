@@ -12,6 +12,8 @@ COPY . .
 ARG SHEETS_URL=""
 ENV SHEETS_URL=$SHEETS_URL
 
+RUN echo ">>> SHEETS_URL en build time: $SHEETS_URL" 
+
 RUN npx ng build --configuration=production \
     --define="__SHEETS_URL__=\"$SHEETS_URL\""
 
