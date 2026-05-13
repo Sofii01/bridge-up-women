@@ -178,6 +178,46 @@
   color: #5f5f5f;
 }
 
+.modal__tag {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--rosa-viejo);
+  text-transform: uppercase;
+}
+
+.modal__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: var(--gris);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.modal__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b1e22;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.modal__cta {
+  margin-top: 4px;
+  width: 100%;
+  text-decoration: none;
+}
+
 .modal__socials {
   display: flex;
   gap: 12px;

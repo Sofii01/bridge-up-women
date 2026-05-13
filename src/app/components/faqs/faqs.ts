@@ -17,7 +17,7 @@ export class Faqs {
   faqs: FaqItem[] = [
     {
       question: '¿Tengo que pagar para sumarme?',
-      answer: 'No necesitás invertir nada hoy. El programa funciona con pago diferido: empezás a pagar una vez que finalizás tu formación. Lo dividimos en cuotas durante un año para que sea cómodo. Y si todavía estás en el proceso de búsqueda laboral, adaptamos el monto a un valor reducido para apoyarte hasta que consigas el puesto que buscás.',
+      answer: 'No buscamos que la capacitación sea una barrera. Por eso contamos con distintas opciones de pago, alternativas flexibles y políticas de acompañamiento para encontrar la modalidad que mejor se adapte a cada situación. La idea es ayudarte a que puedas capacitarte y potenciar tu desarrollo profesional de una forma accesible y posible para vos.',
       open: true,
     },
     {

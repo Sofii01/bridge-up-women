@@ -1,0 +1,251 @@
+.taller-detail {
+  background-color: var(--blanco-calido);
+  min-height: 100vh;
+  padding: 60px 0 100px;
+}
+
+.taller-detail__container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.taller-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--rojo-vino);
+  text-decoration: none;
+  transition: gap 0.2s;
+
+  &:hover {
+    gap: 2px;
+  }
+}
+
+.taller-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.taller-detail__title {
+  font-family: "Fraunces", Helvetica, serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15;
+  color: #2b1e22;
+}
+
+.taller-detail__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--coral);
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2b1e22;
+  background: #fff;
+}
+
+.taller-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.taller-detail__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h2 {
+    font-family: "Fraunces", Helvetica, serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #2b1e22;
+  }
+
+  p {
+    font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5f5f5f;
+  }
+}
+
+.taller-detail__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  li {
+    font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5f5f5f;
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+  }
+}
+
+.timezone-table {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-default-default);
+}
+
+.timezone-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 15px;
+  color: #5f5f5f;
+  border-bottom: 1px solid var(--color-border-default-default);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span:last-child {
+    font-weight: 600;
+    color: #2b1e22;
+    white-space: nowrap;
+  }
+}
+
+.timezone-row--header {
+  background: var(--gris);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2b1e22;
+
+  span:last-child {
+    font-weight: 700;
+    color: #2b1e22;
+  }
+}
+
+.timezone-row--highlight {
+  background: #fdf0f2;
+
+  span:first-child {
+    color: #2b1e22;
+    font-weight: 500;
+  }
+
+  span:last-child {
+    color: var(--rojo-vino);
+  }
+}
+
+.mentora-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--color-border-default-default);
+}
+
+.mentora-card__avatar {
+  flex-shrink: 0;
+}
+
+.mentora-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mentora-card__role {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rosa-viejo);
+}
+
+.mentora-card__name {
+  font-family: "Fraunces", Helvetica, serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #2b1e22;
+}
+
+.mentora-card__bio {
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #5f5f5f;
+  margin-top: 4px;
+}
+
+.taller-detail__cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .taller-detail__title {
+    font-size: 30px;
+  }
+
+  .mentora-card {
+    flex-direction: column;
+  }
+
+  .timezone-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .timezone-row--header {
+    display: none;
+  }
+
+  .taller-detail__cta {
+    flex-direction: column;
+
+    a {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

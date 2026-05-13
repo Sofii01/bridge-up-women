@@ -43,7 +43,16 @@ To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use th
 ```bash
 ng test
 ```
+## Docker
+```bash
 
+
+docker build \
+  --build-arg SHEETS_URL="$(grep SHEETS_URL .env | cut -d= -f2)" \
+  --build-arg INSCRIPCION_URL="$(grep INSCRIPCION_URL .env | cut -d= -f2)" \
+  -t bridge-up-women .
+docker run -p 8080:8080 bridge-up-women
+```
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

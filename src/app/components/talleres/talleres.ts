@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-talleres',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './talleres.html',
   styleUrl: './talleres.scss',
 })
 export class Talleres {
-  modalOpen = false;
+  selectedTaller: number | null = null;
 
-  openModal() {
-    this.modalOpen = true;
+  get modalOpen() {
+    return this.selectedTaller !== null;
+  }
+
+  openModal(id: number) {
+    this.selectedTaller = id;
   }
 
   closeModal() {
-    this.modalOpen = false;
+    this.selectedTaller = null;
   }
 
   onOverlayClick(event: MouseEvent) {

@@ -1,0 +1,140 @@
+@if (isOpen) {
+  <div class="inscripcion-overlay" (click)="onOverlayClick($event)">
+    <div class="inscripcion-modal" role="dialog" aria-modal="true" aria-labelledby="inscripcion-title">
+
+      <button class="inscripcion-modal__close" (click)="close()" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M15 5L5 15M5 5L15 15" stroke="#2b1e22" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      @if (status === 'success') {
+        <div class="inscripcion-modal__success">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="26" stroke="#e0636f" stroke-width="2"/>
+            <path d="M16 28L24 36L40 20" stroke="#e0636f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>¡Inscripción enviada!</h3>
+          <p>Recibimos tu solicitud. Te vamos a escribir al email que ingresaste para confirmar tu lugar.</p>
+          <button class="btn-primary" (click)="reset()">Cerrar</button>
+        </div>
+      } @else {
+        <div class="inscripcion-modal__header">
+          <span class="label">TALLER 1 · 29 DE MAYO</span>
+          <h2 id="inscripcion-title">Inscripción al taller</h2>
+          <p>Completá el formulario y nos ponemos en contacto para confirmar tu lugar.</p>
+        </div>
+
+        <form class="inscripcion-modal__form" #inscripcionForm="ngForm" (ngSubmit)="submit()" novalidate>
+
+          <div class="form-row">
+            <div class="field" [class.field--invalid]="nombre.invalid && nombre.touched">
+              <label for="insc-nombre">NOMBRE*</label>
+              <input id="insc-nombre" type="text" placeholder="Tu nombre"
+                     [(ngModel)]="form.nombre" name="nombre" required
+                     #nombre="ngModel" />
+              @if (nombre.invalid && nombre.touched) {
+                <span class="field__error">Obligatorio</span>
+              }
+            </div>
+            <div class="field" [class.field--invalid]="apellido.invalid && apellido.touched">
+              <label for="insc-apellido">APELLIDO*</label>
+              <input id="insc-apellido" type="text" placeholder="Tu apellido"
+                     [(ngModel)]="form.apellido" name="apellido" required
+                     #apellido="ngModel" />
+              @if (apellido.invalid && apellido.touched) {
+                <span class="field__error">Obligatorio</span>
+              }
+            </div>
+          </div>
+
+          <div class="field" [class.field--invalid]="email.invalid && email.touched">
+            <label for="insc-email">EMAIL*</label>
+            <input id="insc-email" type="email" placeholder="tu@email.com"
+                   [(ngModel)]="form.email" name="email" required email
+                   #email="ngModel" />
+            @if (email.errors?.['required'] && email.touched) {
+              <span class="field__error">Obligatorio</span>
+            } @else if (email.errors?.['email'] && email.touched) {
+              <span class="field__error">Ingresá un email válido</span>
+            }
+          </div>
+
+          <div class="form-row">
+            <div class="field" [class.field--invalid]="pais.invalid && pais.touched">
+              <label for="insc-pais">PAÍS*</label>
+              <select id="insc-pais" [(ngModel)]="form.pais" name="pais" required
+                      #pais="ngModel">
+                <option value="" disabled>Seleccioná tu país</option>
+                <option>Argentina</option>
+                <option>México</option>
+                <option>Colombia</option>
+                <option>Chile</option>
+                <option>Perú</option>
+                <option>Uruguay</option>
+                <option>Bolivia</option>
+                <option>Paraguay</option>
+                <option>Ecuador</option>
+                <option>Venezuela</option>
+                <option>Brasil</option>
+                <option>Otro</option>
+              </select>
+              @if (pais.invalid && pais.touched) {
+                <span class="field__error">Seleccioná un país</span>
+              }
+            </div>
+            <div class="field" [class.field--invalid]="edad.invalid && edad.touched">
+              <label for="insc-edad">EDAD*</label>
+              <input id="insc-edad" type="number" placeholder="Tu edad" min="21" max="28"
+                     [(ngModel)]="form.edad" name="edad" required
+                     #edad="ngModel" />
+              @if (edad.errors?.['required'] && edad.touched) {
+                <span class="field__error">Obligatorio</span>
+              } @else if ((edad.errors?.['min'] || edad.errors?.['max']) && edad.touched) {
+                <span class="field__error">Debe ser entre 21 y 28 años</span>
+              }
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="insc-carrera">CARRERA / DISCIPLINA</label>
+            <input id="insc-carrera" type="text" placeholder="Ej: Administración, Psicología, Ingeniería..."
+                   [(ngModel)]="form.carrera" name="carrera" />
+          </div>
+
+          <div class="field" [class.field--invalid]="situacion.invalid && situacion.touched">
+            <label for="insc-situacion">SITUACIÓN ACADÉMICA*</label>
+            <select id="insc-situacion" [(ngModel)]="form.situacion" name="situacion" required
+                    #situacion="ngModel">
+              <option value="" disabled>Seleccioná una opción</option>
+              <option value="Cursando último año">Cursando mi último año</option>
+              <option value="Recientemente graduada">Recientemente graduada</option>
+              <option value="Otro">Otro</option>
+            </select>
+            @if (situacion.invalid && situacion.touched) {
+              <span class="field__error">Seleccioná una opción</span>
+            }
+          </div>
+
+          @if (status === 'error') {
+            <p class="form-error">Hubo un error al enviar. Por favor intentá de nuevo.</p>
+          }
+
+          <button type="submit" class="inscripcion-modal__submit" [disabled]="status === 'loading'">
+            @if (status === 'loading') {
+              Enviando...
+            } @else {
+              Inscribirme
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2 9h14M11 4l5 5-5 5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            }
+          </button>
+
+          <p class="form-legal">Tus datos son confidenciales y solo se usan para gestionar tu inscripción.</p>
+        </form>
+      }
+
+    </div>
+  </div>
+}
