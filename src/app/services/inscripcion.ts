@@ -11,6 +11,7 @@ export interface InscripcionData {
   carrera: string;
   situacion: string;
   edad: string;
+  experienciaLaboral: string;
 }
 
 @Injectable({
@@ -30,6 +31,7 @@ export class InscripcionService {
       carrera:   data.carrera.trim(),
       situacion: data.situacion,
       edad:      data.edad,
+      experienciaLaboral: data.experienciaLaboral.trim(),
       timestamp: new Date().toISOString(),
     });
 

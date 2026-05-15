@@ -25,6 +25,7 @@ export class InscripcionModal {
     carrera: '',
     situacion: '',
     edad: '',
+    experienciaLaboral: '',
   };
 
   status: 'idle' | 'loading' | 'success' | 'error' = 'idle';
@@ -54,7 +55,7 @@ export class InscripcionModal {
 
   reset() {
     this.inscripcionForm?.resetForm();
-    this.form = { nombre: '', apellido: '', email: '', pais: '', carrera: '', situacion: '', edad: '' };
+    this.form = { nombre: '', apellido: '', email: '', pais: '', carrera: '', situacion: '', edad: '', experienciaLaboral: '' };
     this.status = 'idle';
     this.close();
   }

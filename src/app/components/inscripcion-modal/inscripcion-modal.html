@@ -116,6 +116,23 @@
             }
           </div>
 
+          <div class="field" [class.field--invalid]="experienciaLaboral.invalid && experienciaLaboral.touched">
+            <label>¿TENÉS EXPERIENCIA LABORAL?*</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" [(ngModel)]="form.experienciaLaboral" name="experienciaLaboral" value="Sí" required #experienciaLaboral="ngModel" />
+                Sí
+              </label>
+              <label class="radio-option">
+                <input type="radio" [(ngModel)]="form.experienciaLaboral" name="experienciaLaboral" value="No" required />
+                No
+              </label>
+            </div>
+            @if (experienciaLaboral.invalid && experienciaLaboral.touched) {
+              <span class="field__error">Seleccioná una opción</span>
+            }
+          </div>
+
           @if (status === 'error') {
             <p class="form-error">Hubo un error al enviar. Por favor intentá de nuevo.</p>
           }

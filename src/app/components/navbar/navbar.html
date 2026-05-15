@@ -1,5 +1,5 @@
 <header class="navbar" [class.scrolled]="isScrolled">
-  <img class="logo" src="assets/img/logo.png" alt="BridgeUp Women" />
+  <img class="logo" src="assets/img/logo.png" alt="BridgeUp Women" (click)="goHome()" style="cursor: pointer;" />
 
   <nav class="nav-links" [class.open]="menuOpen">
     <button class="nav-link" (click)="scrollTo('talleres')">Talleres</button>

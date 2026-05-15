@@ -32,6 +32,11 @@ export class Navbar {
     }
   }
 
+  goHome() {
+    this.menuOpen = false;
+    this.router.navigate(['/']);
+  }
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }

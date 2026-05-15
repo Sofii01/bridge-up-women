@@ -124,6 +124,32 @@
   }
 }
 
+.radio-group {
+  display: flex;
+  gap: 24px;
+  padding: 4px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+  font-size: 15px;
+  color: #2b1e22;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 0;
+
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--rosa-viejo);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+}
+
 .field--invalid {
   input,
   select {
