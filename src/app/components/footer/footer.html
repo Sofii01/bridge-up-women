@@ -54,8 +54,6 @@
 
   <div class="footer__bottom">
     <p>© 2026 BridgeUp Women. Todos los derechos reservados.</p>
-    <button class="footer__privacy-btn" (click)="privacyOpen = true">Políticas de Privacidad</button>
+    <button type="button" class="footer__privacy-btn" [routerLink]="['/privacy-policy']">Políticas de Privacidad</button>
   </div>
 </footer>
-
-<app-privacy-drawer [isOpen]="privacyOpen" (closed)="privacyOpen = false"></app-privacy-drawer>
